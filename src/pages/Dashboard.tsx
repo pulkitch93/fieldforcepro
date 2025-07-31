@@ -14,6 +14,11 @@ import { RevenueChart } from "@/components/dashboard/RevenueChart";
 import { TechnicianMap } from "@/components/dashboard/TechnicianMap";
 import { JobMetrics } from "@/components/dashboard/JobMetrics";
 import { FilterPanel } from "@/components/dashboard/FilterPanel";
+import { ChurnRiskTable } from "@/components/dashboard/ChurnRiskTable";
+import { RevenueForecastChart } from "@/components/dashboard/RevenueForecastChart";
+import { JobRiskHeatmap } from "@/components/dashboard/JobRiskHeatmap";
+import { TechnicianBurnoutWarnings } from "@/components/dashboard/TechnicianBurnoutWarnings";
+import { AIInsightsPanel } from "@/components/dashboard/AIInsightsPanel";
 
 export default function Dashboard() {
   return (
@@ -94,6 +99,28 @@ export default function Dashboard() {
               <RevenueChart />
               <JobMetrics />
               <TechnicianMap />
+            </div>
+
+            {/* Predictive Insights & AI Copilot Section */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-1">Predictive Insights & AI Copilot</h2>
+                <p className="text-muted-foreground">AI-powered analytics and intelligent recommendations for business optimization</p>
+              </div>
+              
+              {/* AI Insights Panel - Full Width */}
+              <AIInsightsPanel />
+              
+              {/* Predictive Analytics Grid */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <RevenueForecastChart />
+                <ChurnRiskTable />
+              </div>
+              
+              <div className="grid gap-6 lg:grid-cols-2">
+                <JobRiskHeatmap />
+                <TechnicianBurnoutWarnings />
+              </div>
             </div>
           </div>
 
