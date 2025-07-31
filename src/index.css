@@ -9,33 +9,50 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 210 24% 16%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 210 24% 16%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --popover-foreground: 210 24% 16%;
+    
+    /* WorkWave Blue Theme */
+    --primary: 217 91% 23%;          /* Deep blue #0e4b99 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 217 91% 35%;     /* Lighter blue for accents */
+    
+    --secondary: 217 25% 95%;        /* Very light blue-gray */
+    --secondary-foreground: 217 91% 23%;
+    
+    --muted: 217 20% 96%;
+    --muted-foreground: 217 15% 45%;
+    
+    --accent: 192 85% 45%;           /* Teal accent #1fb8cd */
+    --accent-foreground: 0 0% 100%;
+    
+    --success: 142 71% 45%;          /* Green for positive metrics */
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;           /* Amber for alerts */
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 217 20% 88%;
+    --input: 217 20% 88%;
+    --ring: 217 91% 23%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(192 85% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 71% 55%));
+    
+    /* Shadows with brand colors */
+    --shadow-primary: 0 10px 25px -5px hsl(var(--primary) / 0.15);
+    --shadow-accent: 0 10px 25px -5px hsl(var(--accent) / 0.15);
+    
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
