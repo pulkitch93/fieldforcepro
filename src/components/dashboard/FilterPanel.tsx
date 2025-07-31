@@ -24,22 +24,22 @@ export function FilterPanel() {
   const [selectedServiceType, setSelectedServiceType] = useState("");
 
   const activeFilters = [
-    selectedBranch && { type: "branch", value: selectedBranch },
-    selectedTechnician && { type: "technician", value: selectedTechnician },
-    selectedServiceType && { type: "service", value: selectedServiceType },
+    selectedBranch && selectedBranch !== "all" && { type: "branch", value: selectedBranch },
+    selectedTechnician && selectedTechnician !== "all" && { type: "technician", value: selectedTechnician },
+    selectedServiceType && selectedServiceType !== "all" && { type: "service", value: selectedServiceType },
     dateRange?.from && { type: "date", value: `${format(dateRange.from, "MMM dd")} - ${dateRange.to ? format(dateRange.to, "MMM dd") : "..."}` },
   ].filter(Boolean);
 
   const clearFilter = (filterType: string) => {
     switch (filterType) {
       case "branch":
-        setSelectedBranch("");
+        setSelectedBranch("all");
         break;
       case "technician":
-        setSelectedTechnician("");
+        setSelectedTechnician("all");
         break;
       case "service":
-        setSelectedServiceType("");
+        setSelectedServiceType("all");
         break;
       case "date":
         setDateRange(undefined);
@@ -48,9 +48,9 @@ export function FilterPanel() {
   };
 
   const clearAllFilters = () => {
-    setSelectedBranch("");
-    setSelectedTechnician("");
-    setSelectedServiceType("");
+    setSelectedBranch("all");
+    setSelectedTechnician("all");
+    setSelectedServiceType("all");
     setDateRange(undefined);
   };
 
@@ -111,7 +111,7 @@ export function FilterPanel() {
               <SelectValue placeholder="All Branches" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Branches</SelectItem>
+              <SelectItem value="all">All Branches</SelectItem>
               <SelectItem value="downtown">Downtown</SelectItem>
               <SelectItem value="westside">Westside</SelectItem>
               <SelectItem value="northtown">Northtown</SelectItem>
@@ -128,7 +128,7 @@ export function FilterPanel() {
               <SelectValue placeholder="All Technicians" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Technicians</SelectItem>
+              <SelectItem value="all">All Technicians</SelectItem>
               <SelectItem value="mike">Mike Johnson</SelectItem>
               <SelectItem value="sarah">Sarah Chen</SelectItem>
               <SelectItem value="david">David Miller</SelectItem>
@@ -145,7 +145,7 @@ export function FilterPanel() {
               <SelectValue placeholder="All Services" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Services</SelectItem>
+              <SelectItem value="all">All Services</SelectItem>
               <SelectItem value="residential">Residential Pest Control</SelectItem>
               <SelectItem value="commercial">Commercial Services</SelectItem>
               <SelectItem value="termite">Termite Inspection</SelectItem>
