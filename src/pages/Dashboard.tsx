@@ -13,12 +13,7 @@ import { KPICard } from "@/components/dashboard/KPICard";
 import { RevenueChart } from "@/components/dashboard/RevenueChart";
 import { TechnicianMap } from "@/components/dashboard/TechnicianMap";
 import { JobMetrics } from "@/components/dashboard/JobMetrics";
-import { FilterPanel } from "@/components/dashboard/FilterPanel";
-import { ChurnRiskTable } from "@/components/dashboard/ChurnRiskTable";
-import { RevenueForecastChart } from "@/components/dashboard/RevenueForecastChart";
-import { JobRiskHeatmap } from "@/components/dashboard/JobRiskHeatmap";
-import { TechnicianBurnoutWarnings } from "@/components/dashboard/TechnicianBurnoutWarnings";
-import { AIInsightsPanel } from "@/components/dashboard/AIInsightsPanel";
+import { HorizontalFilterPanel } from "@/components/dashboard/HorizontalFilterPanel";
 
 export default function Dashboard() {
   return (
@@ -32,103 +27,74 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Main Grid Layout */}
-        <div className="grid gap-6 lg:grid-cols-4">
-          {/* Left Column - Main Content */}
-          <div className="lg:col-span-3 space-y-6">
-            {/* Top KPI Cards */}
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <KPICard
-                title="Revenue (MTD)"
-                value="$67,430"
-                change={{ value: 12.5, period: "last month" }}
-                icon={DollarSign}
-                variant="success"
-              />
-              <KPICard
-                title="Job Completion Rate"
-                value="94.2%"
-                change={{ value: 3.1, period: "last week" }}
-                icon={CheckCircle}
-                variant="success"
-              />
-              <KPICard
-                title="Avg. Time per Job"
-                value="1.8 hrs"
-                change={{ value: -8.3, period: "last month" }}
-                icon={Clock}
-                variant="accent"
-              />
-              <KPICard
-                title="Customer Satisfaction"
-                value="4.7/5"
-                change={{ value: 2.1, period: "last quarter" }}
-                icon={Star}
-                variant="warning"
-              />
-              <KPICard
-                title="Active Technicians"
-                value="23"
-                icon={Users}
-                variant="default"
-              />
-              <KPICard
-                title="Missed Appointments"
-                value="7"
-                change={{ value: -12.0, period: "yesterday" }}
-                icon={AlertTriangle}
-                variant="destructive"
-              />
-              <KPICard
-                title="Revenue Growth"
-                value="+18.4%"
-                change={{ value: 5.2, period: "vs target" }}
-                icon={TrendingUp}
-                variant="success"
-              />
-              <KPICard
-                title="Routes Optimized"
-                value="15"
-                icon={MapPin}
-                variant="accent"
-              />
-            </div>
+        {/* Horizontal Filter Panel */}
+        <HorizontalFilterPanel />
 
-            {/* Charts Section */}
-            <div className="grid gap-6">
-              <RevenueChart />
-              <JobMetrics />
-              <TechnicianMap />
-            </div>
-
-            {/* Predictive Insights & AI Copilot Section */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-foreground mb-1">Predictive Insights & AI Copilot</h2>
-                <p className="text-muted-foreground">AI-powered analytics and intelligent recommendations for business optimization</p>
-              </div>
-              
-              {/* AI Insights Panel - Full Width */}
-              <AIInsightsPanel />
-              
-              {/* Predictive Analytics Grid */}
-              <div className="grid gap-6 lg:grid-cols-2">
-                <RevenueForecastChart />
-                <ChurnRiskTable />
-              </div>
-              
-              <div className="grid gap-6 lg:grid-cols-2">
-                <JobRiskHeatmap />
-                <TechnicianBurnoutWarnings />
-              </div>
-            </div>
+        {/* Main Content */}
+        <div className="space-y-6">
+          {/* Top KPI Cards */}
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <KPICard
+              title="Revenue (MTD)"
+              value="$67,430"
+              change={{ value: 12.5, period: "last month" }}
+              icon={DollarSign}
+              variant="success"
+            />
+            <KPICard
+              title="Job Completion Rate"
+              value="94.2%"
+              change={{ value: 3.1, period: "last week" }}
+              icon={CheckCircle}
+              variant="success"
+            />
+            <KPICard
+              title="Avg. Time per Job"
+              value="1.8 hrs"
+              change={{ value: -8.3, period: "last month" }}
+              icon={Clock}
+              variant="accent"
+            />
+            <KPICard
+              title="Customer Satisfaction"
+              value="4.7/5"
+              change={{ value: 2.1, period: "last quarter" }}
+              icon={Star}
+              variant="warning"
+            />
+            <KPICard
+              title="Active Technicians"
+              value="23"
+              icon={Users}
+              variant="default"
+            />
+            <KPICard
+              title="Missed Appointments"
+              value="7"
+              change={{ value: -12.0, period: "yesterday" }}
+              icon={AlertTriangle}
+              variant="destructive"
+            />
+            <KPICard
+              title="Revenue Growth"
+              value="+18.4%"
+              change={{ value: 5.2, period: "vs target" }}
+              icon={TrendingUp}
+              variant="success"
+            />
+            <KPICard
+              title="Routes Optimized"
+              value="15"
+              icon={MapPin}
+              variant="accent"
+            />
           </div>
 
-          {/* Right Column - Filter Panel */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-6">
-              <FilterPanel />
-            </div>
+          {/* Charts Section */}
+          <div className="grid gap-6">
+            <RevenueChart />
+            <JobMetrics />
+            <TechnicianMap />
           </div>
         </div>
       </div>
