@@ -30,7 +30,7 @@ const getStatusIcon = (status: string) => {
 
 export function TechnicianMap() {
   return (
-    <Card className="col-span-full lg:col-span-1">
+    <Card className="col-span-full">
       <CardHeader>
         <CardTitle className="text-lg font-semibold flex items-center gap-2">
           <MapPin className="h-5 w-5 text-primary" />
@@ -38,38 +38,46 @@ export function TechnicianMap() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        {/* Simulated map area */}
-        <div className="relative bg-muted/30 rounded-lg h-48 mb-4 flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-          <p className="text-muted-foreground text-sm">Interactive Map View</p>
-          <div className="absolute top-2 right-2">
-            <Badge variant="outline" className="text-xs">Live Updates</Badge>
+        {/* Map and technician layout */}
+        <div className="grid gap-6 lg:grid-cols-2">
+          {/* Map area - expanded */}
+          <div className="relative bg-muted/30 rounded-lg h-80 flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
+            <div className="text-center">
+              <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
+              <p className="text-muted-foreground text-sm">Interactive Map View</p>
+              <p className="text-xs text-muted-foreground mt-1">Real-time technician locations</p>
+            </div>
+            <div className="absolute top-2 right-2">
+              <Badge variant="outline" className="text-xs">Live Updates</Badge>
+            </div>
           </div>
-        </div>
-        
-        {/* Technician list */}
-        <div className="space-y-3">
-          {technicianData.map((tech) => {
-            const StatusIcon = getStatusIcon(tech.status);
-            return (
-              <div key={tech.id} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <StatusIcon className="h-4 w-4 text-muted-foreground" />
-                  <div>
-                    <p className="font-medium text-sm">{tech.name}</p>
-                    <p className="text-xs text-muted-foreground">{tech.location}</p>
+          
+          {/* Technician list */}
+          <div className="space-y-3">
+            <h3 className="font-medium text-sm text-foreground mb-3">Active Technicians</h3>
+            {technicianData.map((tech) => {
+              const StatusIcon = getStatusIcon(tech.status);
+              return (
+                <div key={tech.id} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <StatusIcon className="h-4 w-4 text-muted-foreground" />
+                    <div>
+                      <p className="font-medium text-sm">{tech.name}</p>
+                      <p className="text-xs text-muted-foreground">{tech.location}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Badge variant={getStatusColor(tech.status) as any} className="text-xs">
+                      {tech.status}
+                    </Badge>
+                    <span className="text-xs text-muted-foreground">
+                      {tech.completed}/{tech.jobsToday}
+                    </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Badge variant={getStatusColor(tech.status) as any} className="text-xs">
-                    {tech.status}
-                  </Badge>
-                  <span className="text-xs text-muted-foreground">
-                    {tech.completed}/{tech.jobsToday}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </CardContent>
     </Card>

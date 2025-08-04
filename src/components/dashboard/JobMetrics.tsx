@@ -20,7 +20,7 @@ const dailyJobsData = [
 
 export function JobMetrics() {
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <div className="grid gap-6 grid-cols-1">
       {/* Job Status Distribution */}
       <Card>
         <CardHeader>

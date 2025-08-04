@@ -91,9 +91,11 @@ export default function Dashboard() {
           </div>
 
           {/* Charts Section */}
-          <div className="grid gap-6">
-            <RevenueChart />
-            <JobMetrics />
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="space-y-6">
+              <RevenueChart />
+              <JobMetrics />
+            </div>
             <TechnicianMap />
           </div>
         </div>
