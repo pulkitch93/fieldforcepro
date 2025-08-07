@@ -4,6 +4,7 @@ import { RevenueForecastChart } from "@/components/dashboard/RevenueForecastChar
 import { JobRiskHeatmap } from "@/components/dashboard/JobRiskHeatmap";
 import { TechnicianBurnoutWarnings } from "@/components/dashboard/TechnicianBurnoutWarnings";
 import { AIInsightsPanel } from "@/components/dashboard/AIInsightsPanel";
+import { ExportButton } from "@/components/dashboard/ExportButton";
 
 export default function PredictiveInsights() {
   return (
@@ -15,6 +16,7 @@ export default function PredictiveInsights() {
             <h1 className="text-3xl font-bold text-foreground">Predictive Insights & AI Copilot</h1>
             <p className="text-muted-foreground">AI-powered analytics and intelligent recommendations for business optimization</p>
           </div>
+          <ExportButton dashboardName="predictive-insights" />
         </div>
 
         {/* AI Insights Panel - Full Width */}

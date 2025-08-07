@@ -11,9 +11,8 @@ import {
 import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { KPICard } from "@/components/dashboard/KPICard";
 import { RevenueChart } from "@/components/dashboard/RevenueChart";
-import { TechnicianMap } from "@/components/dashboard/TechnicianMap";
-import { JobMetrics } from "@/components/dashboard/JobMetrics";
 import { HorizontalFilterPanel } from "@/components/dashboard/HorizontalFilterPanel";
+import { ExportButton } from "@/components/dashboard/ExportButton";
 
 export default function Dashboard() {
   return (
@@ -25,6 +24,7 @@ export default function Dashboard() {
             <h1 className="text-3xl font-bold text-foreground">PestPac Command Center</h1>
             <p className="text-muted-foreground">Monitor performance, optimize operations, and drive growth</p>
           </div>
+          <ExportButton dashboardName="dashboard" />
         </div>
 
         {/* Horizontal Filter Panel */}
@@ -90,14 +90,8 @@ export default function Dashboard() {
             />
           </div>
 
-          {/* Charts Section */}
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="space-y-6">
-              <RevenueChart />
-              <JobMetrics />
-            </div>
-            <TechnicianMap />
-          </div>
+          {/* Revenue Chart - Full Width */}
+          <RevenueChart />
         </div>
       </div>
     </DashboardLayout>

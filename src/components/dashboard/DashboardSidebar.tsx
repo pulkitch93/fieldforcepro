@@ -26,6 +26,8 @@ import {
 
 const menuItems = [
   { title: "Dashboard", url: "/", icon: Home },
+  { title: "Field Operations", url: "/field-operations", icon: UserCheck },
+  { title: "Predictive Insights & AI", url: "/predictive-insights", icon: Brain },
   { title: "Analytics", url: "/analytics", icon: BarChart3 },
   { title: "Live Tracking", url: "/tracking", icon: MapPin },
   { title: "Technicians", url: "/technicians", icon: UserCheck },
@@ -34,7 +36,6 @@ const menuItems = [
   { title: "Fleet Management", url: "/fleet", icon: Truck },
   { title: "Revenue", url: "/revenue", icon: DollarSign },
   { title: "Reports", url: "/reports", icon: TrendingUp },
-  { title: "Predictive Insights & AI", url: "/predictive-insights", icon: Brain },
   { title: "Settings", url: "/settings", icon: Settings },
 ];
 
