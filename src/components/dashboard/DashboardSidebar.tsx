@@ -62,7 +62,7 @@ export function DashboardSidebar() {
             </div>
             {!collapsed && (
               <div>
-                <h2 className="font-bold text-lg text-primary">PestPac</h2>
+                <h2 className="font-bold text-lg text-primary">FieldForce Pro</h2>
                 <p className="text-xs text-muted-foreground">Command Center</p>
               </div>
             )}

@@ -67,7 +67,7 @@ export function AIInsightsPanel() {
   const [chatHistory, setChatHistory] = useState([
     {
       type: "assistant",
-      message: "Hi! I'm your PestPac AI assistant. Ask me about your dashboard data, trends, or get recommendations for improving operations."
+      message: "Hi! I'm your FieldForce Pro AI assistant. Ask me about your dashboard data, trends, or get recommendations for improving operations."
     }
   ]);
 
