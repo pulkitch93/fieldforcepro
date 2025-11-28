@@ -23,7 +23,7 @@ export function ExportButton({ dashboardName }: ExportButtonProps) {
 
   const generateFileName = (format: string) => {
     const date = getCurrentDate();
-    return `pestpac_${dashboardName}_${date}.${format}`;
+    return `fieldforce-pro_${dashboardName}_${date}.${format}`;
   };
 
   const handleExport = async (format: 'png' | 'pdf' | 'xlsx' | 'pptx') => {

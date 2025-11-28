@@ -21,7 +21,7 @@ export default function Dashboard() {
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-foreground">PestPac Command Center</h1>
+            <h1 className="text-3xl font-bold text-foreground">FieldForce Pro Command Center</h1>
             <p className="text-muted-foreground">Monitor performance, optimize operations, and drive growth</p>
           </div>
           <ExportButton dashboardName="dashboard" />
