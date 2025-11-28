@@ -58,7 +58,7 @@ export function DashboardSidebar() {
         <div className="p-4 border-b">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">PP</span>
+              <span className="text-primary-foreground font-bold text-sm">FP</span>
             </div>
             {!collapsed && (
               <div>
