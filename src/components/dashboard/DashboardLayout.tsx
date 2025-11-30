@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { DashboardSidebar } from "./DashboardSidebar";
 import { DashboardHeader } from "./DashboardHeader";
+import { DashboardFooter } from "./DashboardFooter";
 import { WAIVEChatbot } from "./WAIVEChatbot";
 
 interface DashboardLayoutProps {
@@ -18,6 +19,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           <main className="flex-1 p-6 bg-muted/20">
             {children}
           </main>
+          <DashboardFooter />
         </div>
         <WAIVEChatbot />
       </div>
