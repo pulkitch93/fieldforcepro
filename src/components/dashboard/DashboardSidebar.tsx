@@ -56,7 +56,7 @@ export function DashboardSidebar() {
       <SidebarContent>
         {/* Logo and Title */}
         <div className="p-4 border-b">
-          <div className="flex items-center gap-3">
+          <NavLink to="/marketing" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">FP</span>
             </div>
@@ -66,7 +66,7 @@ export function DashboardSidebar() {
                 <p className="text-xs text-muted-foreground">Command Center</p>
               </div>
             )}
-          </div>
+          </NavLink>
         </div>
 
         <SidebarGroup>
