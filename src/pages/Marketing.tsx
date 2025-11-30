@@ -31,7 +31,7 @@ export default function Marketing() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" asChild className="group">
-                <Link to="/">
+                <Link to="/dashboard">
                   Get Started
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -107,7 +107,7 @@ export default function Marketing() {
             Join hundreds of field service teams already using FieldForce Pro to optimize their operations.
           </p>
           <Button size="lg" asChild>
-            <Link to="/">
+            <Link to="/dashboard">
               Start Your Journey
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

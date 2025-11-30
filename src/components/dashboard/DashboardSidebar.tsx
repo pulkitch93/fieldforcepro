@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/sidebar";
 
 const menuItems = [
-  { title: "Dashboard", url: "/", icon: Home },
+  { title: "Dashboard", url: "/dashboard", icon: Home },
   { title: "Field Operations", url: "/field-operations", icon: UserCheck },
   { title: "Predictive Insights & AI", url: "/predictive-insights", icon: Brain },
   { title: "Analytics", url: "/analytics", icon: BarChart3 },
@@ -56,7 +56,7 @@ export function DashboardSidebar() {
       <SidebarContent>
         {/* Logo and Title */}
         <div className="p-4 border-b">
-          <NavLink to="/marketing" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <NavLink to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">FP</span>
             </div>
